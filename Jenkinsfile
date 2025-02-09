@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     stages {
         stage("build project"){
             agent{
@@ -7,6 +8,7 @@ pipeline {
                     image 'node-18 alpine'
                     reuseNode true
                 }
+            }
                 steps{
                     sh '''
                     ls -la
@@ -19,4 +21,4 @@ pipeline {
             }
         }
     }
-}
+
